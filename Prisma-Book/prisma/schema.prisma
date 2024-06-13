@@ -14,8 +14,39 @@ datasource db {
 }
 
 model Users{
-  Id        Int     @id @default(autoincrement())
-  UserName  String
+  Id        Int       @id @default(autoincrement())
+  UserName  String?
   Student   Boolean
-  Age Int 
+  Age       Int 
+  profile   Profile?
+  post      Post[]
+}
+model Profile {
+  id        Int       @id @default(autoincrement())
+  bio       String?
+  users     Users     @relation(fields: [userId], references: [Id])
+  userId    Int       @unique
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String   
+  author      Users    @relation(fields: [authorId], references: [Id])
+  authorId    Int
+  likeonpost  LikeOnPost[]
+}
+
+model Like{
+  id          Int      @id @default(autoincrement())
+  react       String
+  likeonpost  LikeOnPost[]
+}
+
+model LikeOnPost{
+  post        Post     @relation(fields: [postId], references: [id])
+  postId      Int
+  like        Like     @relation(fields: [likeId], references: [id])
+  likeId      Int
+  
+  @@id([postId,likeId])
 }
