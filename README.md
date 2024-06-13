@@ -8,3 +8,5 @@
 
 ### How to run query-book
 - you can use `$ npm run dev` .
+### How to run prisma-book
+- to be continued.
