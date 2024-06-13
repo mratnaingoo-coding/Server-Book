@@ -1,4 +1,4 @@
-<div align=center><h1 style= "font-weight:700, font-size: 50px">Server-Book</h1></div>
+<div align=center><h1 font-weight="700" font-size="50">Server-Book</h1></div>
 ### In this server-book, I tried to use by using MySQL, Docker & Prisma for the backend connection server with Express JS. 
 ### Language Tools
 - Express JS
