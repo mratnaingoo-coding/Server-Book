@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE `Users` (
+    `Id` INTEGER NOT NULL AUTO_INCREMENT,
+    `UserName` VARCHAR(191) NOT NULL,
+    `Student` BOOLEAN NOT NULL,
+    `Age` INTEGER NOT NULL,
+
+    PRIMARY KEY (`Id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
